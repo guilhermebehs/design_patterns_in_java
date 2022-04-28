@@ -1,22 +1,23 @@
 package creational.abstractfactory;
 
-import creational.abstractfactory.factories.EletricCarFactory;
-import creational.abstractfactory.factories.GasolineCarFactory;
+import creational.factorymethod.factories.CarCreationFactoryMethod;
+import creational.factorymethod.factories.EletricCarCreation;
+import creational.factorymethod.factories.GasolineCarCreation;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CarAbstractFactoryTest {
+public class CarCreationFactoryMethodTest {
 
 
-    private CarAbstractFactory carFactory;
+    private CarCreationFactoryMethod carCreationFactoryMethod;
 
     @Test
     @DisplayName("Should create a gasoline car")
     public void shouldCreateAGasolineCar(){
-        carFactory = new GasolineCarFactory();
-        var car = carFactory.createCar();
+        carCreationFactoryMethod = new GasolineCarCreation();
+        var car = carCreationFactoryMethod.createEmptyCar();
         var carClass = car.getClass();
         assertEquals(carClass.getSimpleName(), "GasolineCar");
 
@@ -25,10 +26,9 @@ public class CarAbstractFactoryTest {
     @Test
     @DisplayName("Should create an eletric car")
     public void shouldCreateAnEletricCar(){
-        carFactory = new EletricCarFactory();
-        var car = carFactory.createCar();
+        carCreationFactoryMethod = new EletricCarCreation();
+        var car = carCreationFactoryMethod.createEmptyCar();
         var carClass = car.getClass();
         assertEquals(carClass.getSimpleName(), "EletricCar");
-
     }
 }
