@@ -1,4 +1,4 @@
-package creational.abstractfactory;
+package creational.factorymethod;
 
 import creational.factorymethod.factories.CarCreationFactoryMethod;
 import creational.factorymethod.factories.EletricCarCreation;
@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("CarCreationFactoryMethod")
 public class CarCreationFactoryMethodTest {
 
 
